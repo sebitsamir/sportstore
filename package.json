@@ -1,0 +1,17 @@
+{
+  "name": "sport-store",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev:web",
+    "dev:all": "npx --yes concurrently -n web,api -c green,blue \"npm run dev:web\" \"npm run dev:api\"",
+    "dev:web": "npm run dev --workspace=@sport-store/web",
+    "dev:api": "npm run dev --workspace=@sport-store/api",
+    "build": "npm run build --workspace=@sport-store/web",
+    "build:web": "npm run build --workspace=@sport-store/web",
+    "lint": "npm run lint --workspace=@sport-store/web"
+  }
+}
